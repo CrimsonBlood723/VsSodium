@@ -1,76 +1,60 @@
-# Visual Studio Code - Open Source ("Code - OSS")
-[![Feature Requests](https://img.shields.io/github/issues/microsoft/vscode/feature-request.svg)](https://github.com/microsoft/vscode/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
-[![Bugs](https://img.shields.io/github/issues/microsoft/vscode/bug.svg)](https://github.com/microsoft/vscode/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Abug)
+# VsSodium
 
-## The Repository
+VsSodium is an independent, open-source code editor built from the Code - OSS source tree. It keeps the familiar editing, debugging, and extension workflow while adding a VsSodium identity and a set of custom editor features.
 
-This repository ("`Code - OSS`") is where we (Microsoft) develop the [Visual Studio Code](https://code.visualstudio.com) product together with the community. Not only do we work on code and issues here, but we also publish our [roadmap](https://github.com/microsoft/vscode/wiki/Roadmap), [monthly iteration plans](https://github.com/microsoft/vscode/wiki/Iteration-Plans), and our [endgame plans](https://github.com/microsoft/vscode/wiki/Running-the-Endgame). This source code is available to everyone under the standard [MIT license](https://github.com/microsoft/vscode/blob/main/LICENSE.txt).
+VsSodium is not affiliated with or endorsed by Microsoft. Visual Studio Code and related names are Microsoft trademarks. The upstream source and license notices are included in this repository.
 
-## Visual Studio Code
+## Features
 
-<p align="center">
-  <img alt="VS Code in action" src="https://github.com/user-attachments/assets/56af271c-949d-454c-a3ea-16188c063414">
-</p>
+- **VsSodium themes:** Light, Dark, Violet, Crimson, Aurora, and Ember color themes.
+- **VsSodium file icons:** A dedicated icon theme for common programming languages and file types.
+- **SVG source tools:** Editable SVG text files with syntax highlighting, snippets, and a command to show the source beside the image preview.
+- **Optional Discord Rich Presence:** Share editor activity with the Discord desktop app. It is off by default, and file names are hidden by default. See the [setup guide](extensions/vssodium-discord-rpc/README.md).
+- **Extensions:** Browse and install extensions through the Open VSX Registry.
+- **Code - OSS editor features:** Editing, navigation, debugging, and workspace features from the upstream open-source codebase.
 
-[Visual Studio Code](https://code.visualstudio.com) is a distribution of the `Code - OSS` repository with Microsoft-specific customizations released under a traditional [Microsoft product license](https://code.visualstudio.com/License/).
+## Download and install
 
-[Visual Studio Code](https://code.visualstudio.com) combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle. It provides comprehensive code editing, navigation, and understanding support along with lightweight debugging, a rich extensibility model, and lightweight integration with existing tools.
+Check the [VsSodium Releases page](https://github.com/CrimsonBlood723/VsSodium/releases) for published installers. For Windows, download the VsSodium installer, run it, and follow the setup prompts. If no release is listed yet, a public installer has not been published.
 
-Visual Studio Code is updated monthly with new features and bug fixes. You can download it for Windows, macOS, and Linux on the [Visual Studio Code website](https://code.visualstudio.com/Download). To get the latest releases every day, install the [Insiders build](https://code.visualstudio.com/insiders).
+## Build from source
 
-## Contributing
+Use the Node.js version listed in [`.nvmrc`](.nvmrc) and the pnpm version pinned in [`package.json`](package.json). The project uses pnpm; npm and Yarn are not supported for installing the repository dependencies.
 
-There are many ways in which you can participate in this project, for example:
+From the repository root:
 
-* [Submit bugs and feature requests](https://github.com/microsoft/vscode/issues), and help us verify them as they are checked in
-* Review [source code changes](https://github.com/microsoft/vscode/pulls)
-* Review the [documentation](https://github.com/microsoft/vscode-docs) and make pull requests for anything from typos to new content.
+```powershell
+corepack pnpm install --frozen-lockfile
+corepack pnpm run compile
+```
 
-If you are interested in fixing issues and contributing directly to the codebase, please see the document [How to Contribute](https://github.com/microsoft/vscode/wiki/How-to-Contribute), which covers the following:
+To launch the development build on Windows:
 
-* [How to build and run from source](https://github.com/microsoft/vscode/wiki/How-to-Contribute)
-* [The development workflow, including debugging and running tests](https://github.com/microsoft/vscode/wiki/How-to-Contribute#debugging)
-* [Coding guidelines](https://github.com/microsoft/vscode/wiki/Coding-Guidelines)
-* [Submitting pull requests](https://github.com/microsoft/vscode/wiki/How-to-Contribute#pull-requests)
-* [Finding an issue to work on](https://github.com/microsoft/vscode/wiki/How-to-Contribute#where-to-contribute)
-* [Contributing to translations](https://aka.ms/vscodeloc)
+```powershell
+.\scripts\code.bat
+```
 
-## Feedback
+On macOS or Linux, launch it with:
 
-* Ask a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/vscode)
-* [Request a new feature](CONTRIBUTING.md)
-* Upvote [popular feature requests](https://github.com/microsoft/vscode/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request+sort%3Areactions-%2B1-desc)
-* [File an issue](https://github.com/microsoft/vscode/issues)
-* Connect with the extension author community on [GitHub Discussions](https://github.com/microsoft/vscode-discussions/discussions) or [Slack](https://aka.ms/vscode-dev-community)
-* Follow [@code](https://x.com/code) and let us know what you think!
+```sh
+./scripts/code.sh
+```
 
-See our [wiki](https://github.com/microsoft/vscode/wiki/Feedback-Channels) for a description of each of these channels and information on some other available community-driven channels.
+### Build a Windows x64 user installer
 
-## Related Projects
+Run these commands from the repository root:
 
-Many of the core components and extensions to VS Code live in their own repositories on GitHub. For example, the [node debug adapter](https://github.com/microsoft/vscode-node-debug) and the [mono debug adapter](https://github.com/microsoft/vscode-mono-debug) repositories are separate from each other. For a complete list, please visit the [Related Projects](https://github.com/microsoft/vscode/wiki/Related-Projects) page on our [wiki](https://github.com/microsoft/vscode/wiki).
+```powershell
+corepack pnpm run gulp vscode-win32-x64
+corepack pnpm run gulp vscode-win32-x64-user-setup
+```
 
-## Bundled Extensions
+The installer is created under `.build/win32-x64/user-setup/`. The upstream packaging task names it `VSCodeSetup.exe`; rename it to `VsSodium Installer.exe` before sharing if you want the VsSodium-branded filename. Local builds are unsigned unless Windows signing has been configured.
 
-VS Code includes a set of built-in extensions located in the [extensions](extensions) folder, including grammars and snippets for many languages. Extensions that provide rich language support (inline suggestions, Go to Definition) for a language have the suffix `language-features`. For example, the `json` extension provides coloring for `JSON` and the `json-language-features` extension provides rich language support for `JSON`.
+## Report an issue or contribute
 
-## Development Container
+Report VsSodium-specific bugs and feature requests in [GitHub Issues](https://github.com/CrimsonBlood723/VsSodium/issues). Include your VsSodium version, Windows/macOS/Linux version, steps to reproduce, and any error text. Contributions can be submitted as pull requests to this repository.
 
-This repository includes a Visual Studio Code Dev Containers / GitHub Codespaces development container.
+## License and upstream acknowledgements
 
-* For [Dev Containers](https://aka.ms/vscode-remote/download/containers), use the **Dev Containers: Clone Repository in Container Volume...** command, which creates a Docker volume for better disk I/O on macOS and Windows.
-  * If you already have VS Code and Docker installed, you can also click [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/vscode) to get started. This will cause VS Code to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
-
-* For Codespaces, install the [GitHub Codespaces](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces) extension in VS Code, and use the **Codespaces: Create New Codespace** command.
-
-Docker / the Codespace should have at least **4 cores and 6 GB of RAM (8 GB recommended)** to run a full build. See the [development container README](.devcontainer/README.md) for more information.
-
-## Code of Conduct
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## License
-
-Copyright (c) Microsoft Corporation. All rights reserved.
-
-Licensed under the [MIT](LICENSE.txt) license.
+VsSodium is based on the open-source Code - OSS project. This repository includes the upstream MIT license and copyright notice in [`LICENSE.txt`](LICENSE.txt), along with third-party notices for bundled components. Please retain the applicable notices when redistributing builds.
