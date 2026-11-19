@@ -1,0 +1,206 @@
+{
+  "name": "theme-defaults",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "categories": [
+    "Themes"
+  ],
+  "version": "10.0.0",
+  "publisher": "vscode",
+  "license": "MIT",
+  "engines": {
+    "vscode": "*"
+  },
+  "contributes": {
+		"walkthroughs": [
+			{
+				"id": "vssodium.firstRun",
+				"title": "%vsSodiumWalkthroughTitle%",
+				"description": "%vsSodiumWalkthroughDescription%",
+				"featuredFor": ["package.json", "Cargo.toml", "pyproject.toml", "*.sln"],
+				"steps": [
+					{
+						"id": "vssodium.firstRun.look",
+						"title": "%vsSodiumWalkthroughLookTitle%",
+						"description": "%vsSodiumWalkthroughLookDescription%",
+						"media": { "markdown": "./walkthroughs/look.md" },
+						"completionEvents": ["onCommand:workbench.action.selectTheme"]
+					},
+					{
+						"id": "vssodium.firstRun.profile",
+						"title": "%vsSodiumWalkthroughProfileTitle%",
+						"description": "%vsSodiumWalkthroughProfileDescription%",
+						"media": { "markdown": "./walkthroughs/profile.md" },
+						"completionEvents": ["onCommand:workbench.profiles.actions.manageProfiles"]
+					},
+					{
+						"id": "vssodium.firstRun.extensions",
+						"title": "%vsSodiumWalkthroughExtensionsTitle%",
+						"description": "%vsSodiumWalkthroughExtensionsDescription%",
+						"media": { "markdown": "./walkthroughs/extensions.md" },
+						"completionEvents": ["onView:workbench.view.extensions"]
+					},
+					{
+						"id": "vssodium.firstRun.project",
+						"title": "%vsSodiumWalkthroughProjectTitle%",
+						"description": "%vsSodiumWalkthroughProjectDescription%",
+						"media": { "markdown": "./walkthroughs/project.md" },
+						"completionEvents": ["onCommand:workbench.action.tasks.openWorkspaceFileTasks"]
+					},
+					{
+						"id": "vssodium.firstRun.performance",
+						"title": "%vsSodiumWalkthroughPerformanceTitle%",
+						"description": "%vsSodiumWalkthroughPerformanceDescription%",
+						"media": { "markdown": "./walkthroughs/performance.md" },
+						"completionEvents": ["onCommand:workbench.action.openProcessExplorer"]
+					},
+					{
+						"id": "vssodium.firstRun.backup",
+						"title": "%vsSodiumWalkthroughBackupTitle%",
+						"description": "%vsSodiumWalkthroughBackupDescription%",
+						"media": { "markdown": "./walkthroughs/backup.md" },
+						"completionEvents": ["onCommand:workbench.action.openSettings"]
+					},
+					{
+						"id": "vssodium.firstRun.help",
+						"title": "%vsSodiumWalkthroughHelpTitle%",
+						"description": "%vsSodiumWalkthroughHelpDescription%",
+						"media": { "markdown": "./walkthroughs/help.md" },
+						"completionEvents": ["onCommand:workbench.action.openIssueReporter"]
+					}
+				]
+			}
+		],
+    "themes": [
+      {
+        "id": "VsSodium Light",
+        "label": "%vsSodiumLightThemeLabel%",
+        "uiTheme": "vs",
+        "path": "./themes/vssodium-light.json"
+      },
+      {
+        "id": "VsSodium Dark",
+        "label": "%vsSodiumDarkThemeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/vssodium-dark.json"
+      },
+      {
+        "id": "VsSodium Violet",
+        "label": "%vsSodiumVioletThemeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/vssodium-violet.json"
+      },
+      {
+        "id": "VsSodium Crimson",
+        "label": "%vsSodiumCrimsonThemeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/vssodium-crimson.json"
+      },
+      {
+        "id": "VsSodium Aurora",
+        "label": "%vsSodiumAuroraThemeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/vssodium-aurora.json"
+      },
+      {
+        "id": "VsSodium Ember",
+        "label": "%vsSodiumEmberThemeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/vssodium-ember.json"
+      },
+      {
+        "id": "Light 2026",
+        "label": "%light2026ThemeLabel%",
+        "uiTheme": "vs",
+        "path": "./themes/2026-light.json"
+      },
+      {
+        "id": "Dark 2026",
+        "label": "%dark2026ThemeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/2026-dark.json"
+      },
+      {
+        "id": "Dark+",
+        "label": "%darkPlusColorThemeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark_plus.json"
+      },
+      {
+        "id": "Dark Modern",
+        "label": "%darkModernThemeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark_modern.json"
+      },
+      {
+        "id": "Light+",
+        "label": "%lightPlusColorThemeLabel%",
+        "uiTheme": "vs",
+        "path": "./themes/light_plus.json"
+      },
+      {
+        "id": "Light Modern",
+        "label": "%lightModernThemeLabel%",
+        "uiTheme": "vs",
+        "path": "./themes/light_modern.json"
+      },
+      {
+        "id": "Visual Studio Dark",
+        "label": "%darkColorThemeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark_vs.json"
+      },
+      {
+        "id": "Visual Studio Light",
+        "label": "%lightColorThemeLabel%",
+        "uiTheme": "vs",
+        "path": "./themes/light_vs.json"
+      },
+      {
+        "id": "Default High Contrast",
+        "label": "%hcColorThemeLabel%",
+        "uiTheme": "hc-black",
+        "path": "./themes/hc_black.json"
+      },
+      {
+        "id": "Default High Contrast Light",
+        "label": "%lightHcColorThemeLabel%",
+        "uiTheme": "hc-light",
+        "path": "./themes/hc_light.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "vssodium-icons",
+        "label": "%vsSodiumIconThemeLabel%",
+        "path": "./fileicons/vs_minimal-icon-theme.json"
+      }
+    ],
+    "configurationDefaults": {
+      "workbench.colorTheme": "VsSodium Dark",
+      "workbench.preferredDarkColorTheme": "VsSodium Dark",
+      "workbench.preferredLightColorTheme": "VsSodium Light",
+      "workbench.iconTheme": "vssodium-icons",
+      "files.autoSave": "afterDelay",
+      "files.autoSaveDelay": 1200,
+      "editor.minimap.enabled": false,
+      "editor.smoothScrolling": false,
+      "editor.cursorSmoothCaretAnimation": "off",
+      "editor.bracketPairColorization.enabled": true,
+      "editor.guides.bracketPairs": true,
+      "editor.stickyScroll.enabled": true,
+      "breadcrumbs.enabled": true,
+      "workbench.reduceMotion": "on",
+      "workbench.list.smoothScrolling": false,
+      "workbench.tree.indent": 18,
+      "chat.disableAIFeatures": true,
+      "chat.copilotCliCommand.enabled": false,
+      "chat.titleBar.signIn.enabled": false,
+      "chat.welcomePage.signIn.enabled": false
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/vscode.git"
+  }
+}

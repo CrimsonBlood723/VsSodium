@@ -1,0 +1,78 @@
+{
+	"name": "vssodium-svg-tools",
+	"displayName": "%displayName%",
+	"description": "%description%",
+	"version": "1.0.0",
+	"publisher": "vssodium",
+	"license": "MIT",
+	"engines": {
+		"vscode": "*"
+	},
+	"main": "./extension.js",
+	"activationEvents": [
+		"onCommand:vssodium.svg.openWithPreview"
+	],
+	"categories": [
+		"Programming Languages",
+		"Visualization"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "svg",
+				"aliases": ["SVG", "svg"],
+				"extensions": [".svg"],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "svg",
+				"scopeName": "text.svg",
+				"path": "./syntaxes/svg.tmLanguage.json"
+			},
+			{
+				"scopeName": "vssodium.svg.injection",
+				"path": "./syntaxes/svg.injection.json",
+				"injectTo": ["text.svg"],
+				"embeddedLanguages": {
+					"meta.embedded.block.svg": "svg"
+				}
+			}
+		],
+		"snippets": [
+			{
+				"language": "svg",
+				"path": "./snippets/svg.code-snippets"
+			}
+		],
+		"commands": [
+			{
+				"command": "vssodium.svg.openWithPreview",
+				"title": "%openWithPreview%",
+				"category": "VsSodium SVG"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "vssodium.svg.openWithPreview",
+					"when": "resourceExtname == .svg",
+					"group": "1_modification"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "vssodium.svg.openWithPreview",
+					"when": "resourceExtname == .svg",
+					"group": "navigation"
+				}
+			]
+		},
+		"configurationDefaults": {
+			"workbench.editorAssociations": {
+				"*.svg": "default"
+			}
+		}
+	}
+}

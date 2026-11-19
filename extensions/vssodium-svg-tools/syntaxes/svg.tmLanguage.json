@@ -1,0 +1,11 @@
+{
+	"information_for_contributors": [
+		"SVG uses the built-in XML grammar for well-tested markup tokenization."
+	],
+	"scopeName": "text.svg",
+	"patterns": [
+		{
+			"include": "text.xml"
+		}
+	]
+}

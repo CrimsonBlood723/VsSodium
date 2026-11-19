@@ -1,0 +1,384 @@
+{
+  "iconDefinitions": {
+    "_folder": {
+      "iconPath": "./images/folder-dark.svg"
+    },
+    "_folder_open": {
+      "iconPath": "./images/folder-open-dark.svg"
+    },
+    "_root": {
+      "iconPath": "./images/root-folder-dark.svg"
+    },
+    "_root_open": {
+      "iconPath": "./images/root-folder-open-dark.svg"
+    },
+    "_file": {
+      "iconPath": "./images/document-dark.svg"
+    },
+    "_code": {
+      "iconPath": "./images/code.svg"
+    },
+    "_markup": {
+      "iconPath": "./images/markup.svg"
+    },
+    "_style": {
+      "iconPath": "./images/style.svg"
+    },
+    "_config": {
+      "iconPath": "./images/config.svg"
+    },
+    "_image": {
+      "iconPath": "./images/image.svg"
+    },
+    "_data": {
+      "iconPath": "./images/data.svg"
+    },
+    "_lang_js": {
+      "iconPath": "./images/language-js.svg"
+    },
+    "_lang_jsx": {
+      "iconPath": "./images/language-jsx.svg"
+    },
+    "_lang_ts": {
+      "iconPath": "./images/language-ts.svg"
+    },
+    "_lang_tsx": {
+      "iconPath": "./images/language-tsx.svg"
+    },
+    "_lang_py": {
+      "iconPath": "./images/language-py.svg"
+    },
+    "_lang_java": {
+      "iconPath": "./images/language-java.svg"
+    },
+    "_lang_c": {
+      "iconPath": "./images/language-c.svg"
+    },
+    "_lang_cpp": {
+      "iconPath": "./images/language-cpp.svg"
+    },
+    "_lang_cs": {
+      "iconPath": "./images/language-cs.svg"
+    },
+    "_lang_go": {
+      "iconPath": "./images/language-go.svg"
+    },
+    "_lang_rs": {
+      "iconPath": "./images/language-rs.svg"
+    },
+    "_lang_php": {
+      "iconPath": "./images/language-php.svg"
+    },
+    "_lang_rb": {
+      "iconPath": "./images/language-rb.svg"
+    },
+    "_lang_swift": {
+      "iconPath": "./images/language-swift.svg"
+    },
+    "_lang_kt": {
+      "iconPath": "./images/language-kt.svg"
+    },
+    "_lang_dart": {
+      "iconPath": "./images/language-dart.svg"
+    },
+    "_lang_lua": {
+      "iconPath": "./images/language-lua.svg"
+    },
+    "_lang_r": {
+      "iconPath": "./images/language-r.svg"
+    },
+    "_lang_perl": {
+      "iconPath": "./images/language-perl.svg"
+    },
+    "_lang_sh": {
+      "iconPath": "./images/language-sh.svg"
+    },
+    "_lang_ps": {
+      "iconPath": "./images/language-ps.svg"
+    },
+    "_lang_scala": {
+      "iconPath": "./images/language-scala.svg"
+    },
+    "_lang_clojure": {
+      "iconPath": "./images/language-clojure.svg"
+    },
+    "_lang_elixir": {
+      "iconPath": "./images/language-elixir.svg"
+    },
+    "_lang_erlang": {
+      "iconPath": "./images/language-erlang.svg"
+    },
+    "_lang_haskell": {
+      "iconPath": "./images/language-haskell.svg"
+    },
+    "_lang_fsharp": {
+      "iconPath": "./images/language-fsharp.svg"
+    },
+    "_lang_ocaml": {
+      "iconPath": "./images/language-ocaml.svg"
+    },
+    "_lang_fortran": {
+      "iconPath": "./images/language-fortran.svg"
+    },
+    "_lang_asm": {
+      "iconPath": "./images/language-asm.svg"
+    },
+    "_lang_zig": {
+      "iconPath": "./images/language-zig.svg"
+    },
+    "_lang_nim": {
+      "iconPath": "./images/language-nim.svg"
+    },
+    "_lang_solidity": {
+      "iconPath": "./images/language-solidity.svg"
+    },
+    "_lang_julia": {
+      "iconPath": "./images/language-julia.svg"
+    },
+    "_lang_matlab": {
+      "iconPath": "./images/language-matlab.svg"
+    },
+    "_lang_groovy": {
+      "iconPath": "./images/language-groovy.svg"
+    },
+    "_lang_objc": {
+      "iconPath": "./images/language-objc.svg"
+    },
+    "_lang_graphql": {
+      "iconPath": "./images/language-graphql.svg"
+    },
+    "_lang_sql": {
+      "iconPath": "./images/language-sql.svg"
+    },
+    "_lang_vue": {
+      "iconPath": "./images/language-vue.svg"
+    },
+    "_lang_svelte": {
+      "iconPath": "./images/language-svelte.svg"
+    },
+    "_lang_astro": {
+      "iconPath": "./images/language-astro.svg"
+    },
+    "_lang_elm": {
+      "iconPath": "./images/language-elm.svg"
+    },
+    "_lang_crystal": {
+      "iconPath": "./images/language-crystal.svg"
+    },
+    "_lang_vb": {
+      "iconPath": "./images/language-vb.svg"
+    },
+    "_lang_hcl": {
+      "iconPath": "./images/language-hcl.svg"
+    },
+    "_lang_html": {
+      "iconPath": "./images/language-html.svg"
+    },
+    "_lang_css": {
+      "iconPath": "./images/language-css.svg"
+    }
+  },
+  "folder": "_folder",
+  "folderExpanded": "_folder_open",
+  "rootFolder": "_root",
+  "rootFolderExpanded": "_root_open",
+  "file": "_file",
+  "fileExtensions": {
+    "ts": "_lang_ts",
+    "tsx": "_lang_tsx",
+    "js": "_lang_js",
+    "jsx": "_lang_jsx",
+    "mjs": "_lang_js",
+    "cjs": "_lang_js",
+    "mts": "_lang_ts",
+    "cts": "_lang_ts",
+    "py": "_lang_py",
+    "java": "_lang_java",
+    "c": "_lang_c",
+    "h": "_lang_c",
+    "cpp": "_lang_cpp",
+    "hpp": "_lang_cpp",
+    "cs": "_lang_cs",
+    "go": "_lang_go",
+    "rs": "_lang_rs",
+    "php": "_lang_php",
+    "rb": "_lang_rb",
+    "swift": "_lang_swift",
+    "kt": "_lang_kt",
+    "html": "_lang_html",
+    "htm": "_lang_html",
+    "xml": "_markup",
+    "svg": "_image",
+    "css": "_lang_css",
+    "scss": "_style",
+    "sass": "_style",
+    "less": "_style",
+    "json": "_config",
+    "jsonc": "_config",
+    "yaml": "_config",
+    "yml": "_config",
+    "toml": "_config",
+    "ini": "_config",
+    "md": "_markup",
+    "mdx": "_markup",
+    "rst": "_markup",
+    "png": "_image",
+    "jpg": "_image",
+    "jpeg": "_image",
+    "gif": "_image",
+    "webp": "_image",
+    "ico": "_image",
+    "avif": "_image",
+    "csv": "_data",
+    "tsv": "_data",
+    "db": "_data",
+    "sql": "_lang_sql",
+    "cljc": "_lang_clojure",
+    "f": "_lang_fortran",
+    "mh": "_lang_objc",
+    "m": "_lang_matlab",
+    "psd1": "_lang_ps",
+    "bas": "_lang_vb",
+    "sol": "_lang_solidity",
+    "pm": "_lang_perl",
+    "f08": "_lang_fortran",
+    "ps1": "_lang_ps",
+    "for": "_lang_fortran",
+    "hrl": "_lang_erlang",
+    "fsi": "_lang_fsharp",
+    "scala": "_lang_scala",
+    "lua": "_lang_lua",
+    "gql": "_lang_graphql",
+    "csx": "_lang_cs",
+    "exs": "_lang_elixir",
+    "hs": "_lang_haskell",
+    "sh": "_lang_sh",
+    "dart": "_lang_dart",
+    "cmd": "_lang_sh",
+    "mm": "_lang_objc",
+    "gradle": "_lang_groovy",
+    "gemspec": "_lang_rb",
+    "pyw": "_lang_py",
+    "r": "_lang_r",
+    "mli": "_lang_ocaml",
+    "f03": "_lang_fortran",
+    "astro": "_lang_astro",
+    "graphql": "_lang_graphql",
+    "vb": "_lang_vb",
+    "f90": "_lang_fortran",
+    "hxx": "_lang_cpp",
+    "cxx": "_lang_cpp",
+    "pyi": "_lang_py",
+    "lhs": "_lang_haskell",
+    "phtml": "_lang_php",
+    "clj": "_lang_clojure",
+    "zig": "_lang_zig",
+    "vue": "_lang_vue",
+    "ml": "_lang_ocaml",
+    "fish": "_lang_sh",
+    "t": "_lang_perl",
+    "hh": "_lang_cpp",
+    "erl": "_lang_erlang",
+    "groovy": "_lang_groovy",
+    "f95": "_lang_fortran",
+    "zsh": "_lang_sh",
+    "rake": "_lang_rb",
+    "svelte": "_lang_svelte",
+    "bash": "_lang_sh",
+    "mlx": "_lang_matlab",
+    "asm": "_lang_asm",
+    "nim": "_lang_nim",
+    "sc": "_lang_scala",
+    "jl": "_lang_julia",
+    "psm1": "_lang_ps",
+    "fsx": "_lang_fsharp",
+    "gvy": "_lang_groovy",
+    "fs": "_lang_fsharp",
+    "cljs": "_lang_clojure",
+    "tfvars": "_lang_hcl",
+    "cc": "_lang_cpp",
+    "pl": "_lang_perl",
+    "cr": "_lang_crystal",
+    "elm": "_lang_elm",
+    "bat": "_lang_sh",
+    "ex": "_lang_elixir",
+    "hcl": "_lang_hcl",
+    "tf": "_lang_hcl",
+    "kts": "_lang_kt"
+  },
+  "fileNames": {
+    "package.json": "_config",
+    "tsconfig.json": "_config",
+    "pnpm-lock.yaml": "_config",
+    "yarn.lock": "_config",
+    "package-lock.json": "_config",
+    "Dockerfile": "_config",
+    ".gitignore": "_config",
+    ".editorconfig": "_config",
+    "README.md": "_markup",
+    "LICENSE": "_markup",
+    "Makefile": "_lang_sh",
+    "GNUmakefile": "_lang_sh"
+  },
+  "languageIds": {
+    "typescript": "_lang_ts",
+    "javascript": "_lang_js",
+    "python": "_lang_py",
+    "markdown": "_markup",
+    "html": "_lang_html",
+    "css": "_lang_css",
+    "json": "_config",
+    "vue": "_lang_vue",
+    "clojure": "_lang_clojure",
+    "typescriptreact": "_lang_tsx",
+    "swift": "_lang_swift",
+    "crystal": "_lang_crystal",
+    "asm": "_lang_asm",
+    "rust": "_lang_rs",
+    "dart": "_lang_dart",
+    "scala": "_lang_scala",
+    "shellscript": "_lang_sh",
+    "hcl": "_lang_hcl",
+    "groovy": "_lang_groovy",
+    "perl": "_lang_perl",
+    "erlang": "_lang_erlang",
+    "haskell": "_lang_haskell",
+    "solidity": "_lang_solidity",
+    "csharp": "_lang_cs",
+    "r": "_lang_r",
+    "vb": "_lang_vb",
+    "matlab": "_lang_matlab",
+    "objective-c": "_lang_objc",
+    "powershell": "_lang_ps",
+    "lua": "_lang_lua",
+    "kotlin": "_lang_kt",
+    "julia": "_lang_julia",
+    "javascriptreact": "_lang_jsx",
+    "ocaml": "_lang_ocaml",
+    "nim": "_lang_nim",
+    "elixir": "_lang_elixir",
+    "elm": "_lang_elm",
+    "ruby": "_lang_rb",
+    "c": "_lang_c",
+    "zig": "_lang_zig",
+    "astro": "_lang_astro",
+    "sql": "_lang_sql",
+    "go": "_lang_go",
+    "objective-cpp": "_lang_objc",
+    "fsharp": "_lang_fsharp",
+    "cpp": "_lang_cpp",
+    "fortran": "_lang_fortran",
+    "graphql": "_lang_graphql",
+    "php": "_lang_php",
+    "java": "_lang_java",
+    "bat": "_lang_sh",
+    "svelte": "_lang_svelte"
+  },
+  "light": {
+    "folder": "_folder",
+    "folderExpanded": "_folder_open",
+    "rootFolder": "_root",
+    "rootFolderExpanded": "_root_open",
+    "file": "_file"
+  }
+}

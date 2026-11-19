@@ -1,0 +1,11 @@
+{
+	"displayName": "VsSodium Discord Rich Presence",
+	"description": "Show your VsSodium activity in Discord.",
+	"configureCommand": "Configure Discord Rich Presence",
+	"toggleCommand": "Toggle Discord Rich Presence",
+	"configurationTitle": "VsSodium Discord Rich Presence",
+	"enabledSetting": "Share your VsSodium activity with Discord. Requires the Discord desktop app to be running.",
+	"applicationIdSetting": "Application ID from your Discord Developer Portal application.",
+	"iconAssetKeySetting": "Rich Presence art asset key uploaded to your Discord application. The default key is vssodium.",
+	"showFileNameSetting": "Show the active file name in Discord. Disabled by default for privacy."
+}

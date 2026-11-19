@@ -1,0 +1,61 @@
+{
+	"$schema": "vscode://schemas/color-theme",
+	"name": "VsSodium Ember",
+	"include": "./vssodium-dark.json",
+	"type": "dark",
+	"tokenColors": [
+		{
+			"scope": "entity.name.tag.svg",
+			"settings": { "foreground": "#FFD166", "fontStyle": "bold" }
+		},
+		{
+			"scope": "entity.other.attribute-name.svg",
+			"settings": { "foreground": "#FF8A72" }
+		}
+	],
+	"colors": {
+		"foreground": "#F3EDE7",
+		"descriptionForeground": "#B9A99B",
+		"focusBorder": "#FFAA62",
+		"editor.background": "#1B1714",
+		"editor.foreground": "#F3EDE7",
+		"editorLineNumber.activeForeground": "#FFD166",
+		"editorCursor.foreground": "#FFAA62",
+		"editor.selectionBackground": "#503828",
+		"editor.selectionHighlightBackground": "#FFAA6233",
+		"editorIndentGuide.activeBackground1": "#FFAA62",
+		"activityBar.background": "#201A16",
+		"activityBar.activeBorder": "#FFAA62",
+		"activityBarBadge.background": "#BA6838",
+		"activityBarBadge.foreground": "#FFFFFF",
+		"sideBar.background": "#241D18",
+		"sideBar.border": "#4D382A",
+		"sideBarSectionHeader.background": "#2B211A",
+		"tab.activeBackground": "#1B1714",
+		"tab.activeBorderTop": "#FFAA62",
+		"list.activeSelectionBackground": "#473224",
+		"list.hoverBackground": "#38291F",
+		"button.background": "#A65330",
+		"button.foreground": "#FFFFFF",
+		"button.hoverBackground": "#C4623B",
+		"badge.background": "#844529",
+		"input.background": "#241D18",
+		"input.border": "#5C4432",
+		"inputOption.activeBorder": "#FFAA62",
+		"dropdown.background": "#241D18",
+		"dropdown.border": "#5C4432",
+		"menu.background": "#241D18",
+		"menu.selectionBackground": "#473224",
+		"panel.background": "#201A16",
+		"panel.border": "#4D382A",
+		"statusBar.background": "#302219",
+		"statusBarItem.remoteBackground": "#92512F",
+		"titleBar.activeBackground": "#201A16",
+		"terminal.ansiYellow": "#FFD166",
+		"terminal.ansiBrightYellow": "#FFE29A",
+		"terminal.ansiCyan": "#6ED7C4",
+		"textLink.foreground": "#FFAA62",
+		"textLink.activeForeground": "#FFC58A",
+		"editorWidget.background": "#241D18"
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"scopeName": "vssodium.svg.injection",
+	"injectionSelector": "L:meta.tag.xml",
+	"patterns": [
+		{
+			"match": "</?([A-Za-z_][\\w:.-]*)",
+			"captures": {
+				"1": {
+					"name": "entity.name.tag.svg"
+				}
+			}
+		},
+		{
+			"match": "\\b(viewBox|preserveAspectRatio|xmlns|xmlns:xlink|fill|fill-rule|fill-opacity|stroke|stroke-width|stroke-linecap|stroke-linejoin|stroke-dasharray|stroke-dashoffset|stroke-opacity|d|points|transform|opacity|clip-path|mask|gradientUnits|gradientTransform|stop-color|stop-opacity)\\b(?=\\s*=)",
+			"name": "entity.other.attribute-name.svg"
+		}
+	]
+}

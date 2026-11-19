@@ -1,0 +1,67 @@
+{
+	"name": "vssodium-discord-rpc",
+	"displayName": "%displayName%",
+	"description": "%description%",
+	"version": "1.0.0",
+	"publisher": "vssodium",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.100.0"
+	},
+	"main": "./out/extension",
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"scripts": {
+		"compile": "gulp compile-extension:vssodium-discord-rpc",
+		"watch": "gulp watch-extension:vssodium-discord-rpc"
+	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "vssodium.discordRichPresence.configure",
+				"title": "%configureCommand%"
+			},
+			{
+				"command": "vssodium.discordRichPresence.toggle",
+				"title": "%toggleCommand%"
+			}
+		],
+		"configuration": {
+			"title": "%configurationTitle%",
+			"properties": {
+				"vssodium.discordRichPresence.enabled": {
+					"type": "boolean",
+					"default": false,
+					"description": "%enabledSetting%"
+				},
+				"vssodium.discordRichPresence.applicationId": {
+					"type": "string",
+					"default": "",
+					"scope": "machine",
+					"description": "%applicationIdSetting%"
+				},
+				"vssodium.discordRichPresence.iconAssetKey": {
+					"type": "string",
+					"default": "vssodium",
+					"description": "%iconAssetKeySetting%"
+				},
+				"vssodium.discordRichPresence.showFileName": {
+					"type": "boolean",
+					"default": false,
+					"description": "%showFileNameSetting%"
+				}
+			}
+		}
+	},
+	"capabilities": {
+		"virtualWorkspaces": false,
+		"untrustedWorkspaces": {
+			"supported": true
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/vscode.git"
+	}
+}

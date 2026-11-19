@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>@@NAME@@.desktop</id>
+	<metadata_license>@@LICENSE@@</metadata_license>
+	<project_license>@@LICENSE@@</project_license>
+	<name>@@NAME_LONG@@</name>
+	<url type="homepage">https://code.visualstudio.com</url>
+	<summary>A focused workspace for building software.</summary>
+	<description>
+		<p>VsSodium combines a streamlined code editor with the tools needed to build, debug, and explore software projects.</p>
+	</description>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://code.visualstudio.com/home/home-screenshot-linux-lg.png</image>
+			<caption>Editing TypeScript and searching for extensions</caption>
+		</screenshot>
+	</screenshots>
+</component>

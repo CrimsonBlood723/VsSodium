@@ -1,0 +1,60 @@
+{
+	"$schema": "vscode://schemas/color-theme",
+	"name": "VsSodium Violet",
+	"include": "./vssodium-dark.json",
+	"type": "dark",
+	"tokenColors": [
+		{
+			"scope": "entity.name.tag.svg",
+			"settings": { "foreground": "#D8B4FE", "fontStyle": "bold" }
+		},
+		{
+			"scope": "entity.other.attribute-name.svg",
+			"settings": { "foreground": "#9AC7FF" }
+		}
+	],
+	"colors": {
+		"foreground": "#EEE9F8",
+		"descriptionForeground": "#B5A9C7",
+		"focusBorder": "#C4A7FF",
+		"editor.background": "#12101C",
+		"editor.foreground": "#EEE9F8",
+		"editorLineNumber.activeForeground": "#D8B4FE",
+		"editorCursor.foreground": "#D8B4FE",
+		"editor.selectionBackground": "#49375F",
+		"editor.selectionHighlightBackground": "#C4A7FF33",
+		"editorIndentGuide.activeBackground1": "#B794F4",
+		"activityBar.background": "#171422",
+		"activityBar.activeBorder": "#C4A7FF",
+		"activityBarBadge.background": "#9B72D8",
+		"activityBarBadge.foreground": "#FFFFFF",
+		"sideBar.background": "#1B1827",
+		"sideBar.border": "#393046",
+		"sideBarSectionHeader.background": "#211D30",
+		"tab.activeBackground": "#12101C",
+		"tab.activeBorderTop": "#C4A7FF",
+		"list.activeSelectionBackground": "#39304A",
+		"list.hoverBackground": "#292438",
+		"button.background": "#805BB8",
+		"button.foreground": "#FFFFFF",
+		"button.hoverBackground": "#946BCF",
+		"badge.background": "#644891",
+		"input.background": "#191624",
+		"input.border": "#514466",
+		"inputOption.activeBorder": "#C4A7FF",
+		"dropdown.background": "#1B1827",
+		"dropdown.border": "#514466",
+		"menu.background": "#1B1827",
+		"menu.selectionBackground": "#39304A",
+		"panel.background": "#171422",
+		"panel.border": "#393046",
+		"statusBar.background": "#211B30",
+		"statusBarItem.remoteBackground": "#67499A",
+		"titleBar.activeBackground": "#171422",
+		"terminal.ansiYellow": "#FFD166",
+		"terminal.ansiCyan": "#8DD9FF",
+		"textLink.foreground": "#C4A7FF",
+		"textLink.activeForeground": "#E0CCFF",
+		"editorWidget.background": "#1B1827"
+	}
+}

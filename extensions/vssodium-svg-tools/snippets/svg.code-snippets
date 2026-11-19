@@ -1,0 +1,39 @@
+{
+	"SVG Document": {
+		"prefix": "svgdoc",
+		"body": [
+			"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 ${1:24} ${2:24}\" fill=\"none\">",
+			"\t$0",
+			"</svg>"
+		],
+		"description": "Start an SVG document with a viewBox"
+	},
+	"SVG Path": {
+		"prefix": "svgpath",
+		"body": [
+			"<path d=\"${1:M 0 0}\" fill=\"${2:currentColor}\" />$0"
+		],
+		"description": "Add a path with editable path data and fill"
+	},
+	"SVG Group": {
+		"prefix": "svggroup",
+		"body": [
+			"<g${1: id=\"group\"}>$0</g>"
+		],
+		"description": "Group SVG elements"
+	},
+	"SVG Rectangle": {
+		"prefix": "svgrect",
+		"body": [
+			"<rect x=\"${1:0}\" y=\"${2:0}\" width=\"${3:24}\" height=\"${4:24}\" rx=\"${5:0}\" fill=\"${6:currentColor}\" />$0"
+		],
+		"description": "Add a rectangle"
+	},
+	"SVG Circle": {
+		"prefix": "svgcircle",
+		"body": [
+			"<circle cx=\"${1:12}\" cy=\"${2:12}\" r=\"${3:10}\" fill=\"${4:currentColor}\" />$0"
+		],
+		"description": "Add a circle"
+	}
+}
