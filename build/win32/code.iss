@@ -8,10 +8,10 @@
 AppId={#AppId}
 AppName={#NameLong}
 AppVerName={#NameVersion}
-AppPublisher=Microsoft Corporation
-AppPublisherURL=https://code.visualstudio.com/
-AppSupportURL=https://code.visualstudio.com/
-AppUpdatesURL=https://code.visualstudio.com/
+AppPublisher=Blood09
+AppPublisherURL=https://github.com/CrimsonBlood723/VsSodium
+AppSupportURL=https://github.com/CrimsonBlood723/VsSodium
+AppUpdatesURL=https://github.com/CrimsonBlood723/VsSodium
 DefaultGroupName={#NameLong}
 AllowNoIcons=yes
 OutputDir={#OutputDir}

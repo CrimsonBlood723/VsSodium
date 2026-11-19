@@ -1,0 +1,6 @@
+{
+	"displayName": "VsSodium Paper Skript",
+	"description": "Skript syntax highlighting, snippets, and a visual block builder with custom blocks.",
+	"openBuilder": "Open Skript Block Builder",
+	"createCustomBlock": "Create Custom Skript Block"
+}

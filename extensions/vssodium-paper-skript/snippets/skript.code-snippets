@@ -1,0 +1,27 @@
+{
+	"Join Event": {
+		"prefix": "onjoin",
+		"body": ["on join:", "\tsend \"&aWelcome to the server!\" to player"],
+		"description": "Run actions when a player joins"
+	},
+	"Player Command": {
+		"prefix": "skcommand",
+		"body": ["command /${1:hello}:", "\ttrigger:", "\t\tsend \"&aHello!\" to player", "$0"],
+		"description": "Create a simple player command"
+	},
+	"Repeating Task": {
+		"prefix": "skevery",
+		"body": ["every ${1:1 minute}:", "\t${0:broadcast \"&eA minute has passed!\"}"],
+		"description": "Run an action repeatedly"
+	},
+	"If Condition": {
+		"prefix": "skif",
+		"body": ["if ${1:player has permission \"example.use\"}:", "\t${0:send \"&aAllowed\" to player}"],
+		"description": "Add an if block"
+	},
+	"Custom Function": {
+		"prefix": "skfunction",
+		"body": ["function ${1:example}(p: player):", "\t${0:send \"&aHello\" to {_p}}"],
+		"description": "Define a reusable function"
+	}
+}
