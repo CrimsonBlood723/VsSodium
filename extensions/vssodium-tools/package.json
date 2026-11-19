@@ -1,0 +1,40 @@
+{
+	"name": "vssodium-tools",
+	"displayName": "%displayName%",
+	"description": "%description%",
+	"version": "1.0.0",
+	"publisher": "vssodium",
+	"license": "MIT",
+	"engines": { "vscode": "*" },
+	"main": "./extension.js",
+	"activationEvents": [
+		"onCommand:vssodium.performance.open",
+		"onCommand:vssodium.lite.toggle",
+		"onCommand:vssodium.project.createStarter"
+	],
+	"contributes": {
+		"commands": [
+			{ "command": "vssodium.performance.open", "title": "%performanceCommand%", "category": "VsSodium" },
+			{ "command": "vssodium.lite.toggle", "title": "%liteCommand%", "category": "VsSodium" },
+			{ "command": "vssodium.project.createStarter", "title": "%starterCommand%", "category": "VsSodium" }
+		],
+		"configuration": {
+			"title": "%configurationTitle%",
+			"properties": {
+				"vssodium.liteMode": {
+					"type": "boolean",
+					"default": false,
+					"scope": "resource",
+					"description": "%liteSetting%"
+				}
+			}
+		},
+		"menus": {
+			"commandPalette": [
+				{ "command": "vssodium.performance.open" },
+				{ "command": "vssodium.lite.toggle" },
+				{ "command": "vssodium.project.createStarter" }
+			]
+		}
+	}
+}

@@ -59,13 +59,15 @@ function packageInnoSetup(iss: string, options: { definitions?: Record<string, u
 }
 
 function buildWin32Setup(arch: string, target: string): task.CallbackTask {
-	if (target !== 'system' && target !== 'user') {
+	if (target !== 'system' && target !== 'user' && target !== 'user-lite') {
 		throw new Error('Invalid setup target');
 	}
 
 	return (cb) => {
-		const x64AppId = target === 'system' ? product.win32x64AppId : product.win32x64UserAppId;
-		const arm64AppId = target === 'system' ? product.win32arm64AppId : product.win32arm64UserAppId;
+		const installTarget = target === 'user-lite' ? 'user' : target;
+		const isLite = target === 'user-lite';
+		const x64AppId = installTarget === 'system' ? product.win32x64AppId : product.win32x64UserAppId;
+		const arm64AppId = installTarget === 'system' ? product.win32arm64AppId : product.win32arm64UserAppId;
 
 		const sourcePath = buildPath(arch);
 		const outputPath = setupDir(arch, target);
@@ -79,7 +81,7 @@ function buildWin32Setup(arch: string, target: string): task.CallbackTask {
 		const originalProductJsonPath = path.join(sourcePath, productJsonRelativePath);
 		const productJsonPath = path.join(outputPath, 'product.json');
 		const productJson = JSON.parse(fs.readFileSync(originalProductJsonPath, 'utf8'));
-		productJson['target'] = target;
+		productJson['target'] = installTarget;
 
 		const definitions: Record<string, unknown> = {
 			NameLong: product.nameLong,
@@ -88,7 +90,7 @@ function buildWin32Setup(arch: string, target: string): task.CallbackTask {
 			Version: pkg.version,
 			RawVersion: pkg.version.replace(/-\w+$/, ''),
 			Commit: commit,
-			NameVersion: product.win32NameVersion + (target === 'user' ? ' (User)' : ''),
+			NameVersion: product.win32NameVersion + (installTarget === 'user' ? ' (User)' : ''),
 			ExeBasename: product.nameShort,
 			RegValueName: product.win32RegValueName,
 			ShellNameShort: product.win32ShellNameShort,
@@ -106,12 +108,15 @@ function buildWin32Setup(arch: string, target: string): task.CallbackTask {
 			SourceDir: sourcePath,
 			RepoDir: repoPath,
 			OutputDir: outputPath,
-			InstallTarget: target,
+			InstallTarget: installTarget,
 			ProductJsonRelativePath: productJsonRelativePath,
 			ProductJsonPath: productJsonPath,
 			VersionedResourcesFolder: versionedResourcesFolder,
 			Quality: quality
 		};
+		if (isLite) {
+			definitions['Lite'] = 'true';
+		}
 
 		if (quality === 'stable' || quality === 'insider') {
 			definitions['AppxPackage'] = `${quality === 'stable' ? 'code' : 'code_insider'}_${arch}.appx`;
@@ -139,6 +144,8 @@ defineWin32SetupTasks('x64', 'system');
 defineWin32SetupTasks('arm64', 'system');
 defineWin32SetupTasks('x64', 'user');
 defineWin32SetupTasks('arm64', 'user');
+defineWin32SetupTasks('x64', 'user-lite');
+defineWin32SetupTasks('arm64', 'user-lite');
 
 function copyInnoUpdater(arch: string) {
 	return () => {

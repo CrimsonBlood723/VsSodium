@@ -35,5 +35,31 @@
 			"<circle cx=\"${1:12}\" cy=\"${2:12}\" r=\"${3:10}\" fill=\"${4:currentColor}\" />$0"
 		],
 		"description": "Add a circle"
+	},
+	"SVG Linear Gradient": {
+		"prefix": "svglineargradient",
+		"body": [
+			"<defs>",
+			"\t<linearGradient id=\"${1:gradient}\" x1=\"${2:0}\" y1=\"${3:0}\" x2=\"${4:1}\" y2=\"${5:1}\">",
+			"\t\t<stop offset=\"${6:0%}\" stop-color=\"${7:#${8:000000}}\" />",
+			"\t\t<stop offset=\"${9:100%}\" stop-color=\"${10:#${11:ffffff}}\" />",
+			"\t</linearGradient>",
+			"</defs>$0"
+		],
+		"description": "Define a reusable linear gradient"
+	},
+	"SVG Path With Stroke": {
+		"prefix": "svgstroke",
+		"body": [
+			"<path d=\"${1:M 2 12 L 22 12}\" fill=\"none\" stroke=\"${2:currentColor}\" stroke-width=\"${3:2}\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />$0"
+		],
+		"description": "Add an editable outlined path"
+	},
+	"SVG Text": {
+		"prefix": "svgtext",
+		"body": [
+			"<text x=\"${1:0}\" y=\"${2:16}\" fill=\"${3:currentColor}\" font-family=\"${4:sans-serif}\" font-size=\"${5:16}\">${6:Text}</text>$0"
+		],
+		"description": "Add a text label"
 	}
 }

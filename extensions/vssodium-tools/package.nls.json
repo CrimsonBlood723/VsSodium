@@ -1,0 +1,9 @@
+{
+	"displayName": "VsSodium Tools",
+	"description": "Light workspace settings, a performance center, and project starter kits.",
+	"performanceCommand": "Open Performance Center",
+	"liteCommand": "Toggle Lite Workspace Mode",
+	"starterCommand": "Create Project from Starter Kit",
+	"configurationTitle": "VsSodium Tools",
+	"liteSetting": "Whether Lite Workspace Mode is enabled for this workspace."
+}

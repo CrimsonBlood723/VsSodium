@@ -1,5 +1,5 @@
 {
 	"displayName": "VsSodium SVG Tools",
-	"description": "Clear SVG source highlighting, handy SVG snippets, and a source plus preview command.",
+	"description": "SVG source highlighting, useful snippets, and a live preview that follows unsaved edits.",
 	"openWithPreview": "Edit SVG With Preview"
 }

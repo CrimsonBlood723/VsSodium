@@ -15,7 +15,11 @@ AppUpdatesURL=https://code.visualstudio.com/
 DefaultGroupName={#NameLong}
 AllowNoIcons=yes
 OutputDir={#OutputDir}
-OutputBaseFilename=VSCodeSetup
+#ifdef Lite
+OutputBaseFilename=VsSodiumLiteInstaller
+#else
+OutputBaseFilename=VsSodiumInstaller
+#endif
 Compression=lzma
 SolidCompression=yes
 AppMutex={code:GetAppMutex}
@@ -103,7 +107,12 @@ Source: "bin\copilot-shim\copilot.exe"; Flags: dontcopy noencryption
 Source: "bin\copilot-shim\copilot"; Flags: dontcopy noencryption
 #endif
 #endif
+#ifdef Lite
+Source: "*"; Excludes: "\CodeSignSummary*.md,\tools,\tools\*,\policies,\policies\*,\appx,\appx\*,\{#ProductJsonRelativePath},\{#ExeBasename}.exe,\{#ExeBasename}.VisualElementsManifest.xml,\bin,\bin\*,\locales\*.pak,\resources\app\extensions\ms-vscode.js-debug,\resources\app\extensions\ms-vscode.js-debug\*,\resources\app\extensions\ms-vscode.js-debug-companion,\resources\app\extensions\ms-vscode.js-debug-companion\*,\resources\app\extensions\vssodium-discord-rpc,\resources\app\extensions\vssodium-discord-rpc\*"; DestDir: "{code:GetDestDir}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "locales\en-US.pak"; DestDir: "{code:GetDestDir}\locales"; Flags: ignoreversion
+#else
 Source: "*"; Excludes: "\CodeSignSummary*.md,\tools,\tools\*,\policies,\policies\*,\appx,\appx\*,\{#ProductJsonRelativePath},\{#ExeBasename}.exe,\{#ExeBasename}.VisualElementsManifest.xml,\bin,\bin\*"; DestDir: "{code:GetDestDir}"; Flags: ignoreversion recursesubdirs createallsubdirs
+#endif
 Source: "{#ExeBasename}.exe"; DestDir: "{code:GetDestDir}"; DestName: "{code:GetExeBasename}"; Flags: ignoreversion
 Source: "{#ExeBasename}.VisualElementsManifest.xml"; DestDir: "{code:GetDestDir}"; DestName: "{code:GetVisualElementsManifest}"; Flags: ignoreversion
 Source: "tools\*"; DestDir: "{app}\{#VersionedResourcesFolder}\tools"; Flags: ignoreversion

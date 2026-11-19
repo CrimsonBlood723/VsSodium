@@ -43,8 +43,9 @@ const glob = promisify(globCallback);
 const rcedit = promisify(rceditCallback);
 const root = path.dirname(import.meta.dirname);
 const commit = getVersion(root);
-const copilotRuntimeVersion = getCopilotRuntimeVersion(path.join(root, 'node_modules'));
-if (packageJson.copilotRuntimeVersion !== copilotRuntimeVersion) {
+const disableBundledAI = product.disableBundledAI === true;
+const copilotRuntimeVersion = disableBundledAI ? undefined : getCopilotRuntimeVersion(path.join(root, 'node_modules'));
+if (!disableBundledAI && packageJson.copilotRuntimeVersion !== copilotRuntimeVersion) {
 	throw new Error(`package.json declares Copilot runtime ${packageJson.copilotRuntimeVersion}, but @github/copilot-sdk bundles ${copilotRuntimeVersion}.`);
 }
 
@@ -204,23 +205,26 @@ function packageTask(platform: string, arch: string, sourceFolderName: string, d
 				json.date = readISODate(out);
 				json.checksums = checksums;
 				json.version = version;
-				json.copilotVersions = {
-					runtime: copilotRuntimeVersion,
-					sdk: getLockedPackageVersion('@github/copilot-sdk'),
-				};
-				// Stamp agentSdks from the per-platform results file produced
-				// by `build/agent-sdk/produce.ts` (an earlier pipeline step).
-				// Local dev: file absent → empty → not stamped.
-				const agentSdks = readAgentSdkResults();
-				if (Object.keys(agentSdks).length > 0) {
-					json.agentSdks = agentSdks;
-				}
-				// Stamp dictationRuntime from the per-platform results file
-				// produced by `build/dictation-runtime/produce.ts`. Local dev /
-				// unsupported target: file absent → undefined → not stamped.
-				const dictationRuntime = readDictationRuntimeResults();
-				if (dictationRuntime) {
-					json.dictationRuntime = dictationRuntime;
+				delete json.disableBundledAI;
+				if (disableBundledAI) {
+					delete json.copilotVersions;
+					delete json.agentSdks;
+					delete json.dictationRuntime;
+				} else {
+					json.copilotVersions = {
+						runtime: copilotRuntimeVersion,
+						sdk: getLockedPackageVersion('@github/copilot-sdk'),
+					};
+					// Stamp agentSdks from the per-platform results file produced
+					// by `build/agent-sdk/produce.ts` (an earlier pipeline step).
+					const agentSdks = readAgentSdkResults();
+					if (Object.keys(agentSdks).length > 0) {
+						json.agentSdks = agentSdks;
+					}
+					const dictationRuntime = readDictationRuntimeResults();
+					if (dictationRuntime) {
+						json.dictationRuntime = dictationRuntime;
+					}
 				}
 				return json;
 			}))
@@ -242,6 +246,15 @@ function packageTask(platform: string, arch: string, sourceFolderName: string, d
 		const dependenciesSrc = productionDependencies.map(d => path.relative(root, d.source)).map(d => [`${d}/**`, `!${d}/**/{test,tests}/**`]).flat().concat('!**/*.mk');
 
 		const depFilterPattern = ['**', `!**/${config.version}/**`, '!**/bin/darwin-arm64-87/**', '!**/package-lock.json', '!**/yarn.lock'];
+		if (disableBundledAI) {
+			depFilterPattern.push(
+				'!**/node_modules/@github/copilot/**',
+				'!**/node_modules/@github/copilot-*/**',
+				'!**/node_modules/@anthropic-ai/**',
+				'!**/node_modules/@vscode/copilot-api/**',
+				'!**/node_modules/foundry-local-sdk/**',
+			);
+		}
 		if (stripSourceMapsInPackagingTasks) {
 			depFilterPattern.push('!**/*.{js,css}.map');
 		}
@@ -251,8 +264,12 @@ function packageTask(platform: string, arch: string, sourceFolderName: string, d
 			.pipe(filter(depFilterPattern))
 			.pipe(util.cleanNodeModules(path.join(import.meta.dirname, '.moduleignore')))
 			.pipe(util.cleanNodeModules(path.join(import.meta.dirname, `.moduleignore.${process.platform}`)));
-		ensureCopilotPlatformPackage(platform, arch);
-		const copilotRuntimePrebuilds = gulp.src(getCopilotRuntimePrebuildFiles(platform, arch), { base: '.', dot: true, allowEmpty: true });
+		if (!disableBundledAI) {
+			ensureCopilotPlatformPackage(platform, arch);
+		}
+		const copilotRuntimePrebuilds = disableBundledAI
+			? es.readArray([])
+			: gulp.src(getCopilotRuntimePrebuildFiles(platform, arch), { base: '.', dot: true, allowEmpty: true });
 		ensureOSProxyResolverPlatformPackage(platform, arch);
 		const osProxyResolverPlatformPackage = gulp.src(getOSProxyResolverPlatformFiles(platform, arch), { base: '.', dot: true, allowEmpty: true });
 		// `cleanedDeps` has already dropped dot files; keep those of the platform packages, such as SDK plugin manifests.
